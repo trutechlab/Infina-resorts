@@ -2,71 +2,118 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { IMAGES } from '@/assets/images';
 import { Reveal } from '../ui/Reveal';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Instagram, MapPin, Phone, Mail } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-pearl dark:bg-midnight pt-12 md:pt-16 pb-12 px-6 md:px-12 border-t border-navy/10 dark:border-shell/10 transition-colors duration-[1.5s] relative z-10">
-      <div className="max-w-[100rem] mx-auto px-2 md:px-6">
+    <footer className="bg-sand pt-16 md:pt-20 pb-8 px-6 md:px-12 border-t border-navy/10 transition-colors duration-[1.5s] relative z-10">
+      <div className="max-w-[100rem] mx-auto">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-16 md:mb-20">
-          <Reveal>
-            <h4 className="font-serif text-3xl md:text-4xl font-light tracking-tight text-navy dark:text-shell mb-8 md:mb-10">
-              Join the Infina Circle
-            </h4>
-            <form className="max-w-sm group flex items-center border-b border-navy/30 dark:border-shell/30 py-2">
-              <input
-                type="email"
-                placeholder="Your elegant email"
-                className="w-full bg-transparent font-sans text-sm focus:outline-none focus:border-navy dark:focus:border-shell transition-colors text-navy dark:text-shell placeholder-navy/40 dark:placeholder-shell/40"
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14 mb-14">
+          {/* Brand Section */}
+          <Reveal className="lg:col-span-1">
+            <div className="flex flex-col gap-5">
+              <Image
+                src={IMAGES.logo}
+                alt="Infina Beach Resort"
+                height={50}
+                width={130}
+                className="object-contain"
               />
-              <button type="button" className="text-navy dark:text-shell group-hover:text-terracotta dark:group-hover:text-teal transition-colors flex-shrink-0 ml-4 pb-1">
-                <ArrowRight size={20} strokeWidth={1.2} />
-              </button>
-            </form>
+              <p className="font-sans text-sm text-navy leading-relaxed max-w-xs">
+                Experience luxury redefined at Infina Beach Resort. Where every moment becomes a cherished memory.
+              </p>
+              <div className="flex items-center gap-3">
+                <a href="#" className="p-2 rounded-full bg-navy/5 hover:bg-terracotta/20 transition-colors">
+                  <Instagram size={18} className="text-navy" />
+                </a>
+                <a href="#" className="p-2 rounded-full bg-navy/5 hover:bg-terracotta/20 transition-colors">
+                  <MapPin size={18} className="text-navy" />
+                </a>
+              </div>
+            </div>
           </Reveal>
 
-          <Reveal delay={0.2} className="grid grid-cols-2 gap-8 font-sans text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-medium text-charcoal/80 dark:text-champagne/80 md:ml-auto">
-            <div className="flex flex-col gap-5 md:gap-6">
-              <Link href="#" className="hover:text-terracotta dark:hover:text-teal transition-colors w-max">The Resort</Link>
-              <Link href="#" className="hover:text-terracotta dark:hover:text-teal transition-colors w-max">Villas & Estates</Link>
-              <Link href="#" className="hover:text-terracotta dark:hover:text-teal transition-colors w-max">Gastronomy</Link>
-            </div>
-            <div className="flex flex-col gap-5 md:gap-6">
-              <Link href="#" className="hover:text-terracotta dark:hover:text-teal transition-colors w-max">ROÉE Spa</Link>
-              <Link href="#" className="hover:text-terracotta dark:hover:text-teal transition-colors w-max">Contact</Link>
-              <Link href="#" className="hover:text-terracotta dark:hover:text-teal transition-colors w-max">Gallery</Link>
+          {/* Newsletter Section */}
+          <Reveal delay={0.1} className="lg:col-span-1">
+            <h4 className="font-serif text-2xl md:text-3xl font-light tracking-tight text-navy mb-5">
+              Stay Connected
+            </h4>
+            <p className="font-sans text-sm text-navy mb-4">
+              Subscribe to receive exclusive offers and updates.
+            </p>
+            {/* <form className="flex items-center border-b border-navy/30 py-2 mb-4">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full bg-transparent font-sans text-base focus:outline-none focus:border-terracotta transition-colors text-navy placeholder-navy/60"
+              />
+              <button type="button" className="text-navy hover:text-terracotta transition-colors flex-shrink-0 ml-4">
+                <ArrowRight size={22} strokeWidth={1.5} />
+              </button>
+            </form> */}
+          </Reveal>
+
+          {/* Quick Links */}
+          <Reveal delay={0.2} className="lg:col-span-1">
+            <h4 className="font-serif text-2xl md:text-3xl font-light tracking-tight text-navy mb-5">
+              Explore
+            </h4>
+            <div className="grid grid-cols-2 gap-x-6 gap-y-2.5 font-sans text-sm">
+              <div className="flex flex-col gap-2.5">
+                <Link href="#" className="hover:text-terracotta transition-colors w-max">The Resort</Link>
+                <Link href="#" className="hover:text-terracotta transition-colors w-max">Villas & Estates</Link>
+                <Link href="#" className="hover:text-terracotta transition-colors w-max">Gastronomy</Link>
+                <Link href="#" className="hover:text-terracotta transition-colors w-max">ROÉE Spa</Link>
+              </div>
+              <div className="flex flex-col gap-2.5">
+                <Link href="#" className="hover:text-terracotta transition-colors w-max">Gallery</Link>
+                <Link href="#" className="hover:text-terracotta transition-colors w-max">Contact</Link>
+                <Link href="#" className="hover:text-terracotta transition-colors w-max">Sustainability</Link>
+                <Link href="#" className="hover:text-terracotta transition-colors w-max">Careers</Link>
+              </div>
             </div>
           </Reveal>
         </div>
 
-        <Reveal className="flex justify-center my-10 md:my-12">
-          <Image
-            src={IMAGES.logo}
-            alt="Infina Beach Resort"
-            height={64}
-            width={160}
-            className="object-contain rounded-xl opacity-80"
-          />
-        </Reveal>
-
-        <Reveal delay={0.3} className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 font-sans text-[8px] md:text-[9px] uppercase tracking-[0.2em] font-medium text-charcoal/50 dark:text-champagne/50 border-t border-navy/10 dark:border-shell/10 pt-10">
-          <p>© 2026 INFINA BEACH RESORT. ALL RIGHTS RESERVED.</p>
-          <div className="flex flex-wrap gap-6 md:gap-8">
-            <Link href="#" className="hover:text-navy dark:hover:text-shell transition-colors">Instagram</Link>
-            <Link href="#" className="hover:text-navy dark:hover:text-shell transition-colors">Sustainability</Link>
-            <Link href="#" className="hover:text-navy dark:hover:text-shell transition-colors">Legal</Link>
+        {/* Contact Info Row */}
+        <Reveal delay={0.15} className="flex flex-wrap gap-6 md:gap-10 mb-10 pb-6 border-b border-navy/10">
+          <div className="flex items-center gap-2.5">
+            <MapPin size={16} className="text-terracotta" />
+            <span className="font-sans text-sm text-navy">Karnataka, India</span>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <Phone size={16} className="text-terracotta" />
+            <span className="font-sans text-sm text-navy">+91 98765 43210</span>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <Mail size={16} className="text-terracotta" />
+            <span className="font-sans text-sm text-navy">reservations@infina.com</span>
           </div>
         </Reveal>
 
-        <Reveal delay={0.4} className="flex items-center justify-center gap-2.5 mt-8 pt-6 border-t border-navy/10 dark:border-shell/10">
-          <span className="font-sans text-[8px] uppercase tracking-[0.2em] text-charcoal/40 dark:text-champagne/40">Designed &amp; Developed by TruTech Labs</span>
+        {/* Bottom Bar */}
+        <Reveal delay={0.3} className="flex flex-col md:flex-row justify-between items-center gap-3 pt-3">
+          <p className="font-sans text-xs text-navy">
+            © 2026 INFINA BEACH RESORT. ALL RIGHTS RESERVED.
+          </p>
+          {/* <div className="flex items-center gap-5">
+            <Link href="#" className="font-sans text-xs text-navy/50 hover:text-navy transition-colors">Instagram</Link>
+            <Link href="#" className="font-sans text-xs text-navy/50 hover:text-navy transition-colors">Legal</Link>
+            <Link href="#" className="font-sans text-xs text-navy/50 hover:text-navy transition-colors">Privacy</Link>
+          </div> */}
+        </Reveal>
+
+        {/* Developer Credit */}
+        <Reveal delay={0.4} className="flex items-center justify-center gap-2 mt-6 pt-5 border-t border-navy/10">
+          <span className="font-sans text-xs text-navy">Designed & Developed by TruTech Labs</span>
           <Image
             src={IMAGES.trutechLogo}
             alt="TruTech Labs"
-            height={20}
-            width={72}
-            className="object-contain opacity-50 hover:opacity-80 transition-opacity duration-300"
+            height={16}
+            width={55}
+            className="object-contain opacity-50"
           />
         </Reveal>
 

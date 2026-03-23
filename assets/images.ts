@@ -8,6 +8,8 @@ import canopy from './canopy.jpeg';
 import estate from './estate.jpeg';
 import dining from './dining.jpeg';
 import spa from './spa.jpeg';
+import murudeshwar1 from './Sree murudeshwar.jpg';
+import murudeshwar2 from './Sree murudeshwar1.jpg';
 
 export const IMAGES = {
   logo,
@@ -25,5 +27,9 @@ export const IMAGES = {
   nightfall: {
     dining,
     spa,
+  },
+  heritage: {
+    murudeshwar1,
+    murudeshwar2,
   },
 };

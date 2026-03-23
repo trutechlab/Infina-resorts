@@ -2,6 +2,7 @@ import { Navigation } from '@/components/layout/Navigation';
 import { Hero } from '@/components/sections/Hero';
 import { Philosophy } from '@/components/sections/Philosophy';
 import { Sanctuaries } from '@/components/sections/Sanctuaries';
+import { Heritage } from '@/components/sections/Heritage';
 import { Nightfall } from '@/components/sections/Nightfall';
 import { Footer } from '@/components/layout/Footer';
 
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Philosophy />
       <Sanctuaries />
+      <Heritage />
       <Nightfall />
       <Footer />
     </main>

@@ -127,6 +127,7 @@ export function Navigation() {
               {[
                 { name: 'The Sanctuary', href: '#philosophy' },
                 { name: 'Residences', href: '#sanctuaries' },
+                { name: 'Sacred Heritage', href: '#heritage' },
                 { name: 'Gastronomy', href: '#nightfall' },
                 { name: 'ROÉE Spa', href: '#nightfall' }
               ].map((item) => (
