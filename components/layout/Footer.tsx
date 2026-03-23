@@ -59,6 +59,17 @@ export function Footer() {
           </div>
         </Reveal>
 
+        <Reveal delay={0.4} className="flex items-center justify-center gap-2.5 mt-8 pt-6 border-t border-navy/10 dark:border-shell/10">
+          <span className="font-sans text-[8px] uppercase tracking-[0.2em] text-charcoal/40 dark:text-champagne/40">Designed &amp; Developed by TruTech Labs</span>
+          <Image
+            src={IMAGES.trutechLogo}
+            alt="TruTech Labs"
+            height={20}
+            width={72}
+            className="object-contain opacity-50 hover:opacity-80 transition-opacity duration-300"
+          />
+        </Reveal>
+
       </div>
     </footer>
   );

@@ -82,7 +82,7 @@ export function Nightfall() {
               onClick={() => window.dispatchEvent(new Event('open-reservation-modal'))}
               className="btn-sweep font-sans text-[10px] uppercase tracking-[0.2em] font-medium border border-navy/20 dark:border-shell/20 rounded-full py-3.5 px-8 w-max text-navy dark:text-shell"
             >
-              Reserve a Table
+              Coming Soon
             </button>
           </Reveal>
         </div>
@@ -95,9 +95,9 @@ export function Nightfall() {
             <p className="font-sans text-sm md:text-base leading-[2] md:leading-[2.2] text-charcoal dark:text-champagne mb-10 md:mb-12">
               Surrender to absolute tranquility. Our nocturnal spa rituals utilize bioluminescent flora and ancient botanicals to deeply restore your inner equilibrium.
             </p>
-            <button className="btn-sweep font-sans text-[10px] uppercase tracking-[0.2em] font-medium border border-navy/20 dark:border-shell/20 rounded-full py-3.5 px-8 w-max text-navy dark:text-shell">
+            {/* <button className="btn-sweep font-sans text-[10px] uppercase tracking-[0.2em] font-medium border border-navy/20 dark:border-shell/20 rounded-full py-3.5 px-8 w-max text-navy dark:text-shell">
               Explore Spa Menu
-            </button>
+            </button> */}
           </Reveal>
 
           <Reveal delay={0.2} className="md:col-span-6 md:col-start-7 order-1 md:order-2 rounded-[2rem] md:rounded-[2.5rem] rounded-bl-[4rem] md:rounded-bl-[6rem] img-wrap aspect-square md:aspect-[4/3]">
