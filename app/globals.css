@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-pearl: #FDFBF7;
+  --color-sand: #F4F1EA;
+  --color-navy: #1A2B3C;
+  --color-charcoal: #4A4A4A;
+  --color-seafoam: #A8C3BC;
+  --color-terracotta: #D99C79;
+  
+  --color-midnight: #0A1118;
+  --color-slate: #121A21;
+  --color-shell: #F0EFEB;
+  --color-champagne: #D4C9B3;
+  --color-teal: #2E5D63;
+
+  --font-serif: var(--font-cormorant), serif;
+  --font-sans: var(--font-montserrat), sans-serif;
+
+  --ease-water: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@layer base {
+  html, body {
+    @apply transition-colors duration-[1.5s] ease-water bg-pearl text-navy;
+  }
+  html.dark {
+    @apply bg-midnight text-shell;
+  }
+
+  /* Hide Scrollbar for Cleanliness */
+  ::-webkit-scrollbar { width: 0px; background: transparent; }
+}
+
+@layer utilities {
+  .img-wrap {
+    @apply relative overflow-hidden isolate;
+  }
+  .img-scale {
+    @apply transition-transform duration-[1.8s] ease-water will-change-transform;
+  }
+  .img-wrap:hover .img-scale {
+    @apply scale-105;
+  }
+
+  .btn-sweep {
+    @apply relative overflow-hidden transition-colors duration-500;
+  }
+  .btn-sweep::before {
+    content: '';
+    @apply absolute top-0 -left-full w-full h-full bg-navy/5 transition-all duration-700 ease-water -z-10;
+  }
+  .dark .btn-sweep::before {
+    @apply bg-shell/10;
+  }
+  .btn-sweep:hover::before {
+    @apply left-0;
+  }
+
+  .scroll-line {
+    animation: scrollLine 2.5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  }
+}
+
+@keyframes scrollLine {
+  0% { transform: scaleY(0); transform-origin: top; }
+  45% { transform: scaleY(1); transform-origin: top; }
+  55% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
