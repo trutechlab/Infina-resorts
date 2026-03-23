@@ -1,21 +1,23 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import { IMAGES } from '@/assets/images';
 import { Reveal } from '../ui/Reveal';
 import { ArrowRight } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-pearl dark:bg-midnight pt-24 md:pt-32 pb-12 px-6 md:px-12 border-t border-navy/10 dark:border-shell/10 transition-colors duration-[1.5s] relative z-10">
+    <footer className="bg-pearl dark:bg-midnight pt-12 md:pt-16 pb-12 px-6 md:px-12 border-t border-navy/10 dark:border-shell/10 transition-colors duration-[1.5s] relative z-10">
       <div className="max-w-[100rem] mx-auto px-2 md:px-6">
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-24 md:mb-32">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-16 md:mb-20">
           <Reveal>
             <h4 className="font-serif text-3xl md:text-4xl font-light tracking-tight text-navy dark:text-shell mb-8 md:mb-10">
               Join the Infina Circle
             </h4>
             <form className="max-w-sm group flex items-center border-b border-navy/30 dark:border-shell/30 py-2">
-              <input 
-                type="email" 
-                placeholder="Your elegant email" 
+              <input
+                type="email"
+                placeholder="Your elegant email"
                 className="w-full bg-transparent font-sans text-sm focus:outline-none focus:border-navy dark:focus:border-shell transition-colors text-navy dark:text-shell placeholder-navy/40 dark:placeholder-shell/40"
               />
               <button type="button" className="text-navy dark:text-shell group-hover:text-terracotta dark:group-hover:text-teal transition-colors flex-shrink-0 ml-4 pb-1">
@@ -37,6 +39,16 @@ export function Footer() {
             </div>
           </Reveal>
         </div>
+
+        <Reveal className="flex justify-center my-10 md:my-12">
+          <Image
+            src={IMAGES.logo}
+            alt="Infina Beach Resort"
+            height={64}
+            width={160}
+            className="object-contain rounded-xl opacity-80"
+          />
+        </Reveal>
 
         <Reveal delay={0.3} className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 font-sans text-[8px] md:text-[9px] uppercase tracking-[0.2em] font-medium text-charcoal/50 dark:text-champagne/50 border-t border-navy/10 dark:border-shell/10 pt-10">
           <p>© 2026 INFINA BEACH RESORT. ALL RIGHTS RESERVED.</p>

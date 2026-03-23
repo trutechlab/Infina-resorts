@@ -7,7 +7,7 @@ import { IMAGES } from '@/assets/images';
 
 export function Hero() {
   const { scrollY } = useScroll();
-  
+
   // FIX: Fade out the hero text on scroll to prevent overlapping with subsequent sections
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
 
@@ -22,12 +22,12 @@ export function Hero() {
             fill
             className="object-cover transition-transform duration-[2s] ease-out group-hover:scale-105"
             priority
-            referrerPolicy="no-referrer"
+            quality={100}
           />
         </div>
-        
+
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50 transition-colors duration-[2s] ease-out group-hover:from-black/40 group-hover:via-black/30 group-hover:to-black/60"></div>
-        
+
         <motion.div style={{ opacity }} className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 mt-8">
           <Reveal>
             <h1 className="font-serif text-[4.5rem] md:text-[9.5rem] font-light tracking-tight leading-none mb-4 md:mb-6">

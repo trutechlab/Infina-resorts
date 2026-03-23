@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { IMAGES } from '@/assets/images';
 import { ReservationModal } from '../ui/ReservationModal';
 
 export function Navigation() {
@@ -41,7 +43,7 @@ export function Navigation() {
     const handleSmoothScroll = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const anchor = target.closest('a');
-      
+
       if (anchor && anchor.hash && anchor.hash.startsWith('#') && anchor.hash.length > 1 && anchor.origin === window.location.origin) {
         try {
           const element = document.querySelector(anchor.hash);
@@ -60,11 +62,10 @@ export function Navigation() {
     return () => document.removeEventListener('click', handleSmoothScroll);
   }, []);
 
-  const navClasses = `fixed top-0 w-full z-50 transition-all duration-700 ease-water px-6 md:px-10 flex justify-between items-center ${
-    isScrolled && !isMenuOpen
+  const navClasses = `fixed top-0 w-full z-50 transition-all duration-700 ease-water px-6 md:px-10 flex justify-between items-center ${isScrolled && !isMenuOpen
       ? `py-4 backdrop-blur-md shadow-sm ${isDark ? 'bg-midnight/80 text-shell' : 'bg-pearl/80 text-navy'}`
       : `py-6 ${isMenuOpen ? (isDark ? 'text-shell' : 'text-navy') : 'text-white'}`
-  }`;
+    }`;
 
   return (
     <>
@@ -74,29 +75,35 @@ export function Navigation() {
           className="group relative w-8 h-[14px] focus:outline-none z-50 transition-colors duration-500"
         >
           <span
-            className={`absolute top-0 left-0 w-full h-[1px] bg-current transition-all duration-500 ease-water transform origin-center ${
-              isMenuOpen ? 'translate-y-[6px] rotate-45' : ''
-            }`}
+            className={`absolute top-0 left-0 w-full h-[1px] bg-current transition-all duration-500 ease-water transform origin-center ${isMenuOpen ? 'translate-y-[6px] rotate-45' : ''
+              }`}
           ></span>
           <span
-            className={`absolute bottom-0 left-0 h-[1px] bg-current transition-all duration-500 ease-water transform origin-center ${
-              isMenuOpen ? 'w-full -translate-y-[7px] -rotate-45' : 'w-2/3 group-hover:w-full'
-            }`}
+            className={`absolute bottom-0 left-0 h-[1px] bg-current transition-all duration-500 ease-water transform origin-center ${isMenuOpen ? 'w-full -translate-y-[7px] -rotate-45' : 'w-2/3 group-hover:w-full'
+              }`}
           ></span>
         </button>
 
         <Link
           href="/"
-          className="absolute left-1/2 -translate-x-1/2 font-serif text-2xl md:text-3xl tracking-[0.15em] uppercase z-50 transition-colors duration-500"
+          className="absolute left-1/2 -translate-x-1/2 z-50 transition-opacity duration-500 hover:opacity-80"
+          aria-label="Infina — Home"
         >
-          Infina
+          <Image
+            src={IMAGES.logo}
+            alt="Infina Beach Resort"
+            height={44}
+            width={110}
+            className="object-contain rounded-md"
+            priority
+          />
         </Link>
 
         <button
           onClick={() => setIsReservationOpen(true)}
           className="hidden md:block font-sans text-[10px] uppercase tracking-[0.2em] font-medium border border-current rounded-full px-8 py-3 transition-all duration-500 ease-water relative z-50 hover:bg-current hover:text-pearl dark:hover:text-midnight"
         >
-          Reserve
+          coming soon
         </button>
       </header>
 
@@ -110,6 +117,13 @@ export function Navigation() {
             className="fixed inset-0 z-40 bg-pearl/95 dark:bg-midnight/95 backdrop-blur-xl flex items-center justify-center"
           >
             <div className="flex flex-col items-center gap-8 md:gap-12 text-center mt-10">
+              <Image
+                src={IMAGES.logo}
+                alt="Infina Beach Resort"
+                height={64}
+                width={160}
+                className="object-contain rounded-xl mb-4"
+              />
               {[
                 { name: 'The Sanctuary', href: '#philosophy' },
                 { name: 'Residences', href: '#sanctuaries' },
@@ -137,9 +151,9 @@ export function Navigation() {
         )}
       </AnimatePresence>
 
-      <ReservationModal 
-        isOpen={isReservationOpen} 
-        onClose={() => setIsReservationOpen(false)} 
+      <ReservationModal
+        isOpen={isReservationOpen}
+        onClose={() => setIsReservationOpen(false)}
       />
     </>
   );
